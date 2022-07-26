@@ -1,7 +1,7 @@
 import java.util.*;
-class Transpose_matrix_with_diff_row_column
+class diagonal_matrix
 {
-   int i,j;
+  int i,j,sum=0;
   Scanner sc=new Scanner(System.in);
   int row=sc.nextInt();
   int col=sc.nextInt();
@@ -25,26 +25,35 @@ public void input()
    }
 System.out.println();
   }
-
-System.out.println("transpose matrix:");
- int swap=row;
-   row=col;
-    col=swap;
+System.out.println("diagonal matrix");
+if(row==col)
+{
    for(i=0;i<row;i++)
   {
   for(j=0;j<col;j++)
    {
-     System.out.print(m[j][i]+" ");
+     if(i==j)
+     {
+      System.out.print(m[i][j]+" "); 
+     }
+     else
+     {
+      System.out.print(0+" ");
+     }
    }
-   System.out.println();
+System.out.println();
   }
-
+}
+else
+{
+  System.out.println("matrix row and column are not equal");
+}
  }
 public static void main(String[] args)
   {
     System.out.println("Enter row size of matrix:");
     System.out.println("Enter column size of matrix:");
-Transpose_matrix_with_diff_row_column ob=new Transpose_matrix_with_diff_row_column();
-ob.input();
+    diagonal_matrix ob=new diagonal_matrix();
+    ob.input();
 }
 }

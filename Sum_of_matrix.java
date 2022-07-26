@@ -1,7 +1,7 @@
 import java.util.*;
-class Transpose_matrix_with_diff_row_column
+class Sum_of_matrix
 {
-   int i,j;
+  int i,j,sum=0;
   Scanner sc=new Scanner(System.in);
   int row=sc.nextInt();
   int col=sc.nextInt();
@@ -25,26 +25,20 @@ public void input()
    }
 System.out.println();
   }
-
-System.out.println("transpose matrix:");
- int swap=row;
-   row=col;
-    col=swap;
    for(i=0;i<row;i++)
   {
   for(j=0;j<col;j++)
    {
-     System.out.print(m[j][i]+" ");
+     sum=sum+m[i][j];
    }
-   System.out.println();
   }
-
+  System.out.println("sum of matrix="+sum);
  }
 public static void main(String[] args)
   {
     System.out.println("Enter row size of matrix:");
     System.out.println("Enter column size of matrix:");
-Transpose_matrix_with_diff_row_column ob=new Transpose_matrix_with_diff_row_column();
+Sum_of_matrix ob=new Sum_of_matrix();
 ob.input();
-}
+  }
 }

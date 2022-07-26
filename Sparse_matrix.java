@@ -1,35 +1,60 @@
+import java.util.*;
 class Sparse_matrix
 {
- public static void main(String args[])
- {
-  int i,j,row=3,col=3,count=0;
-  int[][]arr={{0,2,0},{4,0,0},{0,8,0}};
-  System.out.println("Your array:");
+   int i,j,count=0;
+  Scanner sc=new Scanner(System.in);
+  int row=sc.nextInt();
+  int col=sc.nextInt();
+int[][] m=new int[row][col];
+public void input()
+{  
+  System.out.println("enter elements of matrix:");
   for(i=0;i<row;i++)
   {
-   for(j=0;j<col;j++)
+  for(j=0;j<col;j++)
    {
-    System.out.print(arr[i][j]+" ");
+    m[i][j]=sc.nextInt();
+    }
+  }
+  System.out.println("your matrix:");
+  for(i=0;i<row;i++)
+  {
+  for(j=0;j<col;j++)
+   {
+    System.out.print(m[i][j]+" ");
    }
-   System.out.println();
+System.out.println();
   }
 
    for(i=0;i<row;i++)
+  {
+  for(j=0;j<col;j++)
    {
-    for(j=0;j<col;j++)
-    {
-     if(arr[i][j]==0)
+     if(m[i][j]==0)
      {
-      count++;
+        count++;
+      
      }
-    } 
+    
    }
-      System.out.println("zero(0's) elements in matrix="+count);;
-      int size=row*col;
-      System.out.println("size of matrix="+size);
-     if(count>size/2)
-    { System.out.println("matrix is sparse matrix");}
-     else
-    { System.out.println("matrix is not sparse matrix");}
+}
+System.out.println("total zero elements in arrat="+count);
+int size=row*col;
+System.out.println("size of matrix="+size);
+if(count>size/2)
+{
+  System.out.println("matrix is sparse matrix");  
+}
+else
+{
+  System.out.println("matrix is not sparse matrix");
+}
  }
+public static void main(String[] args)
+  {
+    System.out.println("Enter row size of matrix:");
+    System.out.println("Enter column size of matrix:");
+Sparse_matrix ob=new Sparse_matrix();
+ob.input();
+}
 }

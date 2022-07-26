@@ -1,7 +1,7 @@
 import java.util.*;
-class Transpose_matrix_with_diff_row_column
+class Rotation_matrix_by_180_degree
 {
-   int i,j;
+   int i,j,colsum;
   Scanner sc=new Scanner(System.in);
   int row=sc.nextInt();
   int col=sc.nextInt();
@@ -26,25 +26,25 @@ public void input()
 System.out.println();
   }
 
-System.out.println("transpose matrix:");
- int swap=row;
-   row=col;
-    col=swap;
-   for(i=0;i<row;i++)
+  System.out.println("after rotation of matrix by 180 degree:");
+  for(i=row-1;i>=0;i--)
   {
-  for(j=0;j<col;j++)
+  for(j=col-1;j>=0;j--)
    {
-     System.out.print(m[j][i]+" ");
+    System.out.print(m[i][j]+" ");
    }
-   System.out.println();
+System.out.println();
   }
 
- }
+}
+
+
+ 
 public static void main(String[] args)
   {
     System.out.println("Enter row size of matrix:");
     System.out.println("Enter column size of matrix:");
-Transpose_matrix_with_diff_row_column ob=new Transpose_matrix_with_diff_row_column();
-ob.input();
+    Rotation_matrix_by_180_degree ob=new Rotation_matrix_by_180_degree();
+    ob.input();
 }
 }
